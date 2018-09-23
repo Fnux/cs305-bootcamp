@@ -1,6 +1,6 @@
 package ch.epfl.sweng.bootcamp;
 
-import android.support.test.espresso.Espresso;
+import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -22,11 +22,11 @@ public class MainActivityTest {
             new ActivityTestRule<>(MainActivity.class);
     @Test
     public void testCanGreetUsers() {
-        Espresso.onView(withId(R.id.mainName))
+        onView(withId(R.id.mainName))
                 .perform(typeText("from my unit test"))
                 .perform(closeSoftKeyboard());
-        Espresso.onView(withId(R.id.mainGoButton)).perform(click());
-        Espresso.onView(withId(R.id.greetingMessage))
+        onView(withId(R.id.mainGoButton)).perform(click());
+        onView(withId(R.id.greetingMessage))
                 .check(matches(withText("Hello from my unit test!")));
     }
 }

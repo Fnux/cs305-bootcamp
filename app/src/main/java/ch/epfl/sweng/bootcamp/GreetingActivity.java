@@ -13,7 +13,7 @@ public class GreetingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_greeting);
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message = "Hello " + intent.getStringExtra(MainActivity.EXTRA_MESSAGE) + "!";
 
         TextView textView = findViewById(R.id.greetingMessage);
         textView.setText(message);
