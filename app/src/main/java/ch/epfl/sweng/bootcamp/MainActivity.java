@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /*
+     * Spawns the Greeting activity.
+     * @param View object that was clicked
+     */
     public void greet(View view) {
         Intent intent = new Intent(this, GreetingActivity.class);
         EditText editText = (EditText) findViewById(R.id.mainName);
